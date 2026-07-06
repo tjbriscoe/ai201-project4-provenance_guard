@@ -105,6 +105,78 @@ def submit():
 # ---------------------------------------------------------------------------
 # POST /appeal
 # ---------------------------------------------------------------------------
+@app.route("/appeal-form", methods=["GET"])
+def appeal_form():
+    return """
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>File an Appeal — Provenance Guard</title>
+        <style>
+            body { font-family: sans-serif; max-width: 600px; margin: 40px auto; padding: 0 20px; }
+            label { display: block; margin-top: 16px; font-weight: bold; }
+            input, textarea { width: 100%; padding: 8px; margin-top: 4px; box-sizing: border-box; }
+            textarea { height: 120px; }
+            button { margin-top: 20px; padding: 10px 20px; cursor: pointer; }
+            #result { margin-top: 20px; padding: 12px; border-radius: 4px; display: none; white-space: pre-wrap; }
+            #result.success { background: #d4edda; color: #155724; display: block; }
+            #result.error { background: #f8d7da; color: #721c24; display: block; }
+        </style>
+    </head>
+    <body>
+        <h1>File an Appeal</h1>
+        <p>Use the <code>content_id</code> from a previous <code>/submit</code> response.</p>
+
+        <form id="appealForm">
+            <label for="content_id">Content ID</label>
+            <input type="text" id="content_id" name="content_id" required
+                   placeholder="e.g. f95f9001-87af-46f6-bb82-3d55cbac2d45">
+
+            <label for="creator_reasoning">Your Reasoning</label>
+            <textarea id="creator_reasoning" name="creator_reasoning" required
+                      placeholder="Explain why you believe this classification is incorrect..."></textarea>
+
+            <button type="submit">Submit Appeal</button>
+        </form>
+
+        <div id="result"></div>
+
+        <script>
+            document.getElementById('appealForm').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const contentId = document.getElementById('content_id').value;
+                const reasoning = document.getElementById('creator_reasoning').value;
+                const resultDiv = document.getElementById('result');
+
+                try {
+                    const response = await fetch('/appeal', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            content_id: contentId,
+                            creator_reasoning: reasoning
+                        })
+                    });
+                    const data = await response.json();
+
+                    if (response.ok) {
+                        resultDiv.className = 'success';
+                        resultDiv.textContent = JSON.stringify(data, null, 2);
+                    } else {
+                        resultDiv.className = 'error';
+                        resultDiv.textContent = 'Error: ' + JSON.stringify(data, null, 2);
+                    }
+                } catch (err) {
+                    resultDiv.className = 'error';
+                    resultDiv.textContent = 'Request failed: ' + err.message;
+                }
+            });
+        </script>
+    </body>
+    </html>
+    """, 200
+
+
 @app.route("/appeal", methods=["POST"])
 def appeal():
     data = request.get_json(silent=True) or {}

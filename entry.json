@@ -1,0 +1,140 @@
+[
+  {
+    "content_id": "8f6d1b4a-ee3b-40bf-932e-4fb3d3dabc2b",
+    "action": "classification",
+    "confidenceBand": "lean_ai",
+    "label": "Likely AI-generated",
+    "combinedScore": 2,
+    "signals": [
+      {
+        "name": "lexical_tics",
+        "direction": "ai",
+        "weight": "MEDIUM",
+        "score": 2,
+        "detail": "3 tic phrases in 28 words (density=0.107)"
+      },
+      {
+        "name": "structural_symmetry",
+        "direction": "neutral",
+        "weight": "MEDIUM",
+        "score": 0,
+        "detail": "too few paragraphs to assess (1 found)"
+      },
+      {
+        "name": "sentence_rhythm",
+        "direction": "neutral",
+        "weight": "MEDIUM",
+        "score": 0,
+        "detail": "too few sentences to assess reliably (4 found, need 5+)"
+      },
+      {
+        "name": "cross_reference",
+        "direction": "neutral",
+        "weight": "HIGH",
+        "score": 0,
+        "detail": "no reference corpus available -- signal inactive"
+      }
+    ],
+    "modifiers": [],
+    "wordCount": 28,
+    "isCoherent": true,
+    "overriddenByCrossReference": false,
+    "actor": "system",
+    "timestamp": "2026-07-06T04:47:15.281952+00:00",
+    "notes": "net_score=2",
+    "transparencyLabel": "Uncertain",
+    "transparencyKey": "uncertain"
+  },
+  {
+    "content_id": "b69d88d6-393e-499d-95ea-f9c8c101ff9e",
+    "action": "classification",
+    "confidenceBand": "indeterminate",
+    "label": "Uncertain",
+    "combinedScore": 0,
+    "signals": [
+      {
+        "name": "lexical_tics",
+        "direction": "neutral",
+        "weight": "LOW",
+        "score": 0,
+        "detail": "no tic phrases found in 20 words"
+      },
+      {
+        "name": "structural_symmetry",
+        "direction": "neutral",
+        "weight": "MEDIUM",
+        "score": 0,
+        "detail": "too few paragraphs to assess (1 found)"
+      },
+      {
+        "name": "sentence_rhythm",
+        "direction": "neutral",
+        "weight": "MEDIUM",
+        "score": 0,
+        "detail": "too few sentences to assess reliably (1 found, need 5+)"
+      },
+      {
+        "name": "cross_reference",
+        "direction": "neutral",
+        "weight": "HIGH",
+        "score": 0,
+        "detail": "no reference corpus available -- signal inactive"
+      }
+    ],
+    "modifiers": [],
+    "wordCount": 20,
+    "isCoherent": true,
+    "overriddenByCrossReference": false,
+    "actor": "system",
+    "timestamp": "2026-07-06T04:47:20.029847+00:00",
+    "notes": "net_score=0",
+    "transparencyLabel": "Uncertain",
+    "transparencyKey": "uncertain"
+  },
+  {
+    "content_id": "9e3724ef-066e-4f86-9e65-e5bfb08e7b28",
+    "action": "classification",
+    "confidenceBand": "indeterminate",
+    "label": "Uncertain",
+    "combinedScore": 0,
+    "signals": [
+      {
+        "name": "lexical_tics",
+        "direction": "neutral",
+        "weight": "LOW",
+        "score": 0,
+        "detail": "no tic phrases found in 13 words"
+      },
+      {
+        "name": "structural_symmetry",
+        "direction": "neutral",
+        "weight": "MEDIUM",
+        "score": 0,
+        "detail": "too few paragraphs to assess (1 found)"
+      },
+      {
+        "name": "sentence_rhythm",
+        "direction": "neutral",
+        "weight": "MEDIUM",
+        "score": 0,
+        "detail": "too few sentences to assess reliably (1 found, need 5+)"
+      },
+      {
+        "name": "cross_reference",
+        "direction": "neutral",
+        "weight": "HIGH",
+        "score": 0,
+        "detail": "no reference corpus available -- signal inactive"
+      }
+    ],
+    "modifiers": [],
+    "wordCount": 13,
+    "isCoherent": true,
+    "overriddenByCrossReference": false,
+    "actor": "system",
+    "timestamp": "2026-07-06T04:47:24.587601+00:00",
+    "notes": "net_score=0",
+    "transparencyLabel": "Uncertain",
+    "transparencyKey": "uncertain"
+  }
+]
