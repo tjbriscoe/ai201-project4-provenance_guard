@@ -160,10 +160,4 @@ The AI's first implementation of this signal used a minimum of 3 sentences befor
 
 ## Portfolio Walkthrough
 
-*[Record a short (2-3 minute) screen walkthrough here: link it in this section.]*
-
-Suggested flow for the recording:
-1. Show a `/submit` call with clearly AI-leaning text, walk through the returned label + signal breakdown
-2. Show a `/submit` call with clearly human text, point out the different label
-3. File a `/appeal` on one of them, then show `GET /log` reflecting the updated status
-4. Briefly mention one design decision (e.g., why cross-reference overrides rather than combines) and one known limitation (short-form content vulnerability)
+https://drive.google.com/file/d/13DxtUPz2oOgBTjqOLwA9RB7jZ5EI7BhB/view?usp=sharing
